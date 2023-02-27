@@ -75,8 +75,8 @@ public class DecryptController {
                     while (rc != -1) {
                         // convert to string
                         String bufString = unHex(new String(buffer));
-                        // remove null characters and end-of-text character
-                        String fixString = bufString.replace("\0", "").replace("\u0004", "").replace("\u0003", "").replace("\u0001", "");
+                        // remove end-of-transmition characters
+                        String fixString = bufString.replace("\u0004", "");
                         // write to plaintext.txt
                         myWriter.write(fixString);
                         buffer = new byte[32];
