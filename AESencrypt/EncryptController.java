@@ -35,7 +35,7 @@ public class EncryptController {
             int paddingLength = 16 - (plaintextLength % 16);
             if (paddingLength < 16) {
                 for (int i = 0; i < paddingLength; i++) {
-                    plaintext += (char) paddingLength;
+                    plaintext += (char) 04;
                 }
             }
         
